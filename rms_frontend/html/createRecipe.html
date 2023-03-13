@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/createRecipe.js"></script>
+    <title>Recipe Management System</title>
+</head>
+
+<body>
+    <header>
+        <h1>Create a new recipe</h1>
+        <nav>
+            <ul>
+                <li><a href="/html/landing.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button onclick="addIngredient()">Add Ingredient</button>
+        <form action="">
+            <label for="recipeNameId">Recipe Name:</label>
+            <input id="recipeNameId" name="recipeName" type="text">
+            <h2>Ingredients:</h2>
+            <div id="ingredient-div">
+                <ul id="ingredient-list">
+                    <li>
+                        <input id="ingredient" name="ingredient" type="text">
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <input type="submit" value="Create Recipe">
+            </div>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

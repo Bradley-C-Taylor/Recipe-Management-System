@@ -1,5 +1,6 @@
 package services;
 
+import model.UserCredentials;
 import utility.ConsoleColors;
 import utility.ErrorLogger;
 
@@ -28,10 +29,29 @@ public class ConsoleService {
       return selection;
    }
 
+   public UserCredentials promptForCredentials() {
+      String username = promptForString("Username: ");
+      String password = promptForString("Password: ");
+      return new UserCredentials(username, password);
+   }
+
+   public String promptForString(String prompt) {
+      System.out.print(prompt);
+      return scanner.nextLine();
+   }
+
    public void printIntroduction() {
       System.out.println(HYPHONS);
       System.out.println("|     WELCOME TO THE RECIPE MANAGEMENT SYSTEM    |");
       System.out.println(HYPHONS);
+   }
+
+   public void printLoginMenu() {
+      System.out.println();
+      System.out.println("1: Register");
+      System.out.println("2: Login");
+      System.out.println("0: Exit");
+      System.out.println();
    }
 
    public void printMainMenu() {
