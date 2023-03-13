@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/createRecipe.js"></script>
-    <title>Recipe Management System</title>
+    <title>New Recipe</title>
 </head>
 
 <body>
@@ -22,8 +22,11 @@
     <main>
         <button onclick="addIngredient()">Add Ingredient</button>
         <form action="">
-            <label for="recipeNameId">Recipe Name:</label>
-            <input id="recipeNameId" name="recipeName" type="text">
+            <div>
+                <label for="recipeNameId">Recipe Name:</label>
+                <input id="recipeNameId" name="recipeName" type="text">
+            </div>
+            
             <h2>Ingredients:</h2>
             <div id="ingredient-div">
                 <ul id="ingredient-list">

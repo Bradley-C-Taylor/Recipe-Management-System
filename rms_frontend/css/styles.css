@@ -3,14 +3,18 @@ body {
     background-color: rgb(48, 48, 48);
     color: honeydew;
 }
+main{
+    margin: 50px;
+}
 h1, h2 {
-    margin-bottom: 0rem;
+    margin: 0rem 0rem;
 }
 form {
-    margin: 20px 16rem;
+    margin: 0px 16rem;
     border: azure solid 1px;
 }
 ul {
+    margin: 0px;
     display: inline-block;
     text-align: left;
 }
@@ -21,6 +25,7 @@ a {
     color: aqua;
 }
 div {
+    margin: 0px;
     padding: .5rem;
 }
 button {
