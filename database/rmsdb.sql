@@ -8,7 +8,8 @@ CREATE TABLE recipe
 	recipeName VARCHAR(128) UNIQUE,
 	directions VARCHAR(500) NOT NULL,
 	
-	CONSTRAINT pk_recipeId PRIMARY KEY (recipeId)
+	CONSTRAINT pk_recipeId PRIMARY KEY (recipeId),
+	CONSTRAINT chk_name_no_spaces CHECK(recipeName NOT LIKE '% %')
 );
 
 CREATE TABLE ingredient

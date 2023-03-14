@@ -18,8 +18,6 @@ function addIngredient() {
     newListItem.appendChild(btnDelete);
     myList.appendChild(newListItem);
     myDiv.appendChild(myList);
-
-    
 }
 
 function removeIngredientField(el) {

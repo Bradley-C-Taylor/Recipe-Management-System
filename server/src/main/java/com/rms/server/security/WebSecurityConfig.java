@@ -1,7 +1,7 @@
-package org.example.rms_server.security;
+package com.rms.server.security;
 
-import org.example.rms_server.security.jwt.JWTConfigurer;
-import org.example.rms_server.security.jwt.TokenProvider;
+import com.rms.server.security.jwt.JWTConfigurer;
+import com.rms.server.security.jwt.TokenProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
