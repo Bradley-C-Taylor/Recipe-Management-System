@@ -1,2 +1,2 @@
 # Recipe-Management-System
-An application for tracking recipes and building meal plans and shopping lists
+An application for tracking recipes, building meal plans, and creating shopping lists
