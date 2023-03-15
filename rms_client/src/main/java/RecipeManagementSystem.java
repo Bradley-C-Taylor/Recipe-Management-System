@@ -79,7 +79,7 @@ public class RecipeManagementSystem {
       UserCredentials credentials = consoleService.promptForCredentials();
       currentUser = authenticationService.login(credentials);
       if (currentUser == null) {
-         consoleService.printError("Registration Unsuccessful");
+         consoleService.printError("Login Unsuccessful");
       }
    }
    private void run() {
