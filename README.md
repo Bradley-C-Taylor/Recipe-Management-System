@@ -1,5 +1,5 @@
 # Recipe-Management-System
-An application for creating, saving, and viewing recipes, building meal plans, and creating shopping lists
+An application for creating, saving, and viewing recipes. An authenticated user can also build a meal plan and create a shopping list based on saved recipes.
 
 TODO:
 - Create new recipe
