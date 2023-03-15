@@ -3,7 +3,7 @@ package utility;
 public class ConsoleColors {
 
    //FROM: https://www.w3schools.blog/ansi-colors-java
-
+   private ConsoleColors(){}
    // Reset
    public static final String RESET = "\033[0m";  // Text Reset
    // Regular Colors

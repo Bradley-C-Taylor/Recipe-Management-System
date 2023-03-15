@@ -1,6 +1,5 @@
 package com.rms.server.model;
 
-import java.util.List;
 import java.util.Objects;
 
 public class Recipe {

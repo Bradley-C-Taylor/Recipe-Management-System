@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JdbcUserDao implements UserDao {
 
-   public JdbcTemplate jdbcTemplate;
+   private JdbcTemplate jdbcTemplate;
 
    public JdbcUserDao(JdbcTemplate jdbcTemplate) {
       this.jdbcTemplate = jdbcTemplate;
@@ -31,11 +31,10 @@ public class JdbcUserDao implements UserDao {
    @Override
    public boolean create(String username, String password) {
       String sql = "INSERT INTO rms_user (username, password_hash) VALUES (?, ?) RETURNING userId";
-      String password_hash = new BCryptPasswordEncoder().encode(password);
+      String passwordHash = new BCryptPasswordEncoder().encode(password);
       Integer newUserId;
-      newUserId = jdbcTemplate.queryForObject(sql, Integer.class, username, password_hash);
-      if (newUserId == null) return false;
-      return true;
+      newUserId = jdbcTemplate.queryForObject(sql, Integer.class, username, passwordHash);
+      return newUserId != null;
    }
 
    private User mapRowToUser(SqlRowSet rs) {

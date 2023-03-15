@@ -9,13 +9,7 @@ import java.util.Scanner;
 public class ConsoleService {
 
    private final Scanner scanner = new Scanner(System.in);
-
-   private final String baseUrl;
-   private final String HYPHONS = "--------------------------------------------------";
-
-   public ConsoleService(String baseUrl) {
-      this.baseUrl = baseUrl;
-   }
+   private static final String HYPHONS = "--------------------------------------------------";
 
    public int promptForMenuSelection(String prompt) {
       int selection;

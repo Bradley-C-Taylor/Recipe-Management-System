@@ -13,6 +13,8 @@ public class ErrorLogger {
    private static PrintWriter pw = null;
    private static final String DIRECTORY_NAME = "rms_client";
 
+   private ErrorLogger(){}
+
    public static void log(String message) {
       try {
          if (pw == null) {

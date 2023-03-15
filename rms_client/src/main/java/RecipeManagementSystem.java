@@ -2,13 +2,12 @@ import model.AuthenticatedUser;
 import model.UserCredentials;
 import services.AuthenticationService;
 import services.ConsoleService;
-import utility.ErrorLogger;
 
 public class RecipeManagementSystem {
 
    private static final String API_BASE_URL = "http://localhost:8080/";
 
-   private final ConsoleService consoleService = new ConsoleService(API_BASE_URL);
+   private final ConsoleService consoleService = new ConsoleService();
    private final AuthenticationService authenticationService = new AuthenticationService(API_BASE_URL);
 
    private AuthenticatedUser currentUser;
@@ -18,13 +17,13 @@ public class RecipeManagementSystem {
       rms.run();
    }
    private void viewRecipes() {
-
+      //need impl
    }
    private void createRecipe() {
-
+      //need impl
    }
    private void createShoppingList() {
-
+      //need impl
    }
 
    private void loginMenu() {
@@ -37,9 +36,9 @@ public class RecipeManagementSystem {
          } else if (menuSelection == 2) {
             handleLogin();
          } else if (menuSelection != 0) {
-            System.out.println("Invalid Selection");
+            consoleService.printError("Invalid Selection");
             consoleService.pause();
-         } else if (menuSelection == 0) {
+         } else {
             System.exit(0);
          }
       }
