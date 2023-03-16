@@ -28,6 +28,12 @@ public class JdbcRecipeDao implements RecipeDao{
       return recipes;
    }
 
+   @Override
+   public String getRecipeNameForId(int id) {
+      String sql = "SELECT recipeName FROM recipe WHERE recipeId = ?;";
+      return jdbcTemplate.queryForObject(sql, String.class, id);
+   }
+
    private Recipe mapRowToRecipe(SqlRowSet rowSet) {
       Recipe recipe = new Recipe();
       recipe.setRecipeId(rowSet.getInt("recipeId"));

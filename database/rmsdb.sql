@@ -1,7 +1,17 @@
-DROP TABLE IF EXISTS recipe, ingredient, amount_format, recipe_ingredient;
+DROP TABLE IF EXISTS rms_user, recipe, ingredient, amount_format, recipe_ingredient;
 
 START TRANSACTION;
 --ROLLBACK;
+
+CREATE TABLE rms_user (
+	userId SERIAL,
+	username varchar(50) UNIQUE NOT NULL,
+	password_hash varchar(200) NOT NULL,
+	role varchar(20),
+	CONSTRAINT PK_tenmo_user PRIMARY KEY (userId),
+	CONSTRAINT UQ_username UNIQUE (username)
+);
+
 CREATE TABLE recipe
 (
 	recipeId SERIAL,
