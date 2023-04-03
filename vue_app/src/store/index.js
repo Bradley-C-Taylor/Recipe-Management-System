@@ -44,6 +44,9 @@ export default new Vuex.Store({
                 recipeName: "Recipe 2",
                 picture: "chicken-al-pastor.png"
             }
+        ],
+        colors: [
+            {background: "#fbf2d5"}
         ]
     },
     getters: {
