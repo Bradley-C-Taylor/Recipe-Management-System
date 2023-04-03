@@ -1,8 +1,7 @@
 <template>
   <div class="recipe-thumbnail">
-      <h2>{{recipe.recipeName}}</h2>
-      <img v-bind:src="getImage">
-      <img src="../assets/chicken-al-pastor.png" alt="">
+      <p>{{recipe.recipeName}}</p>
+      <img v-bind:src="getImgUrl(recipe.picture)">
   </div>
 </template>
 
@@ -10,17 +9,29 @@
 export default {
     name: "recipe-thumbnail",
     props: ["recipe"],
-    computed: {
-        getImage() {
-            return '../assets/' + this.recipe.picture;
+    computed: {},
+    methods: {
+        getImgUrl(imgName) {
+            return require('../assets/' + imgName);
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
 div.recipe-thumbnail {
     display: flex;
     flex-direction: column;
+    width: 200px;
+    background-color: rgb(168, 168, 168);
+    border-radius: 10px;
+}
+p {
+    margin: 5px;
+    color: rgb(26, 26, 70);
+    font-weight: 600;
+}
+img {
+    border-radius: 10px;
 }
 </style>

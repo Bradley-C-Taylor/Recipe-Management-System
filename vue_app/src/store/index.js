@@ -39,6 +39,10 @@ export default new Vuex.Store({
                     { process: "Divide chicken and pineapple between heated tortillas; top with remaining onion and cilantro." }
                 ],
                 picture: "chicken-al-pastor.png"
+            },
+            {
+                recipeName: "Recipe 2",
+                picture: "chicken-al-pastor.png"
             }
         ]
     },

@@ -9,7 +9,6 @@
         <ol class="direction-list">
           <li v-for="direction in recipe.directions" v-bind:key="direction.process">
               <p class="direction">{{direction.process}}</p>
-              <!-- {{direction.process}} -->
           </li>
         </ol>
   </div>

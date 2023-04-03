@@ -1,31 +1,12 @@
 <template>
   <div id="app">
-    <recipe-thumbnail
-      v-for="recipe in $store.state.recipes"
-      v-bind:key="recipe.recipeName"
-      v-bind:recipe="recipe"
-    />
-    <!-- <recipe-display
-      v-for="recipe in $store.state.recipes"
-      v-bind:key="recipe.recipeName"
-      v-bind:recipe="recipe"
-    /> -->
+    <nav>
+      <router-link to="/">All Recipes</router-link> |
+      <router-link to="/recipe">Single Recipe</router-link>
+    </nav>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import RecipeThumbnail from './components/RecipeThumbnail.vue'
-// import RecipeDisplay from './components/RecipeDisplay.vue'
-
-export default {
-  name: 'App',
-  components: {
-    RecipeThumbnail
-    // RecipeDisplay
-    
-  }
-}
-</script>
 
 <style>
 #app {
@@ -34,9 +15,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-* {
-  /* border: #2c3e50 1px solid; */
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
