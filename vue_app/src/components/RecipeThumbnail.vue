@@ -1,5 +1,5 @@
 <template>
-  <div class="recipe-thumbnail">
+  <div class="recipe-thumbnail" @click="inspectRecipe">
       <p>{{recipe.recipeName}}</p>
       <img v-bind:src="getImgUrl(recipe.picture)">
   </div>
@@ -13,6 +13,10 @@ export default {
     methods: {
         getImgUrl(imgName) {
             return require('../assets/' + imgName);
+        },
+        inspectRecipe() {
+            this.$store.commit("UPDATE_RECIPE_TO_INSPECT", this.recipe.id);
+            this.$router.push({name: 'single-recipe', params: {id: this.recipe.id}})
         }
     }
 }

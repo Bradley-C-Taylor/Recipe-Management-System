@@ -1,10 +1,10 @@
 <template>
   <div class="about">
-    <recipe-display
-      v-for="recipe in $store.state.recipes"
+    <recipe-display/>
+      <!-- v-for="recipe in $store.state.recipes"
       :key="recipe.recipeName"
       :recipe="recipe"
-    />
+    /> -->
   </div>
 </template>
 

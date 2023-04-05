@@ -1,15 +1,12 @@
 <template>
   <div id="app">
     <nav>
+      <h1>Recipe Manager</h1>
       <ul class="navigation">
-        <li><router-link to="/">All Recipes</router-link></li>
-        <li><router-link to="/recipe">Single Recipe</router-link></li>
+        <li><router-link :to="{name: 'all-recipes'}">All Recipes</router-link></li>
+        <li><router-link :to="{name: 'single-recipe', params:{id: 1}}">Single Recipe</router-link></li>
       </ul>
     </nav>
-    <!-- <nav>
-      <router-link to="/">All Recipes</router-link> |
-      <router-link to="/recipe">Single Recipe</router-link>
-    </nav> -->
     <router-view/>
   </div>
 </template>
@@ -21,6 +18,24 @@
   --primary-back-color: #7fa99b;
   --darky: #394a51;
 
+
+  --light-blue: #77C9D4;
+  --marine: #57BC90;
+  --forest: #015249;
+  --grey: #A5A5AF;
+
+}
+
+html {
+  height:100%;
+  background: linear-gradient(-20deg ,var(--light-blue), var(--marine));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body {
+  height: 100%;
+  
+  margin:0;
 }
 
 #app {
@@ -28,13 +43,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: var(--primary-back-color);
-  color: var(--primary-fore-color);
+  color: var(--grey);
 }
 
 nav {
-  padding: 1.5rem;
-  background-color: var(--orangey);
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--marine);
+  padding: 1rem;
+  margin: 0 0 .75rem;
+  border-bottom: 2px solid var(--forest);
+}
+h1 {
+  color: var(--forest)
 }
 ul.navigation {
   display: flex;
@@ -43,16 +64,17 @@ ul.navigation {
   list-style-type: none;
 }
 li {
-  padding: 8px;
-  background-color: var(--primary-back-color);
+  padding: 10px 30px;
+  border: 2px solid var(--grey);
+  border-radius: 8px;
+  background-color: var(--forest);
 }
 
 nav a {
   font-weight: bold;
-  color: var(--darky);
+  color: var(--grey);
 }
-
 nav a.router-link-exact-active {
-  color: var(--greeny);
+  color: var(--grey);
 }
 </style>

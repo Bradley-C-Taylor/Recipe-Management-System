@@ -17,7 +17,11 @@
 <script>
 export default {
     name:"recipe-display",
-    props: ["recipe"]
+    computed: {
+        recipe() {
+            return this.$store.getters.recipe;
+        }
+    }
 }
 </script>
 

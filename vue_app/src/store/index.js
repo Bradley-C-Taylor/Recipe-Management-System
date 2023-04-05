@@ -5,8 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        idForInspection: 0,
         recipes: [
             {
+                id: 1,
                 recipeName: "Chicken Al Pastor",
                 ingredients: [
                     { amount: "4", name: "dried guajillo chiles" },
@@ -41,6 +43,7 @@ export default new Vuex.Store({
                 picture: "chicken-al-pastor.png"
             },
             {
+                id: 2,
                 recipeName: "Recipe 2",
                 picture: "chicken-al-pastor.png"
             }
@@ -50,8 +53,14 @@ export default new Vuex.Store({
         ]
     },
     getters: {
+        recipe(state) {
+            return state.recipes.find(rec => rec.id == state.idForInspection);
+        }
     },
     mutations: {
+        UPDATE_RECIPE_TO_INSPECT(state, recipeID) {
+            state.idForInspection = recipeID;
+        }
     },
     actions: {
     },
